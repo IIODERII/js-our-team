@@ -86,4 +86,11 @@ btn.addEventListener('click', function(){
 
   teamMembers.push(newMember);
   printCol(newMember);
+  reset();
 });
+
+function reset(){
+    document.getElementById('name').value = '';
+    document.getElementById('role').value = '';
+    document.getElementById('picture').value= '';
+}
