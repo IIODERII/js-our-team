@@ -45,3 +45,32 @@ const teamMembers = [
     picture: "barbara-ramos-graphic-designer.jpg",
   } 
 ];
+
+
+const rowEl = document.querySelector(".row");
+console.log(rowEl);
+
+
+
+for (let i = 0; i < teamMembers.length; i++) {
+ printCol(teamMembers[i]);
+}
+
+
+
+function printCol(member) {
+  const col = document.createElement("div");
+  col.classList.add("col-4");
+  const template = `
+        <div class="card text-start my-2 text-center">
+            <img class="card-img-top" src="img/${member.picture}" alt="Title">
+            <div class="card-body">
+                <h4 class="card-title">${member.name}</h4>
+                <p class="card-text">${member.role}</p>
+            </div>
+        </div>
+    `;
+    col.innerHTML = template;
+
+    rowEl.append(col);
+}
