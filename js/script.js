@@ -78,14 +78,16 @@ function printCol(member) {
 const btn = document.querySelector('button');
 
 btn.addEventListener('click', function(){
-  const newMember =  {
+  if(document.getElementById('name').value !== '' && document.getElementById('role').value !== '' && document.getElementById('picture').value !== ''){
+    const newMember =  {
     name: document.getElementById('name').value,
     role: document.getElementById('role').value,
     picture: document.getElementById('picture').value,
-  }
+    }
 
-  teamMembers.push(newMember);
-  printCol(newMember);
+    teamMembers.push(newMember);
+    printCol(newMember);
+  }
   reset();
 });
 
